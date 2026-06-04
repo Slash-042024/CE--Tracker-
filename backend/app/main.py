@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware  
-
+from app.models import user, license_holder, license, ce_course, alert_log, subscription
 app = FastAPI(
     title = "CE Tracker API",
     description = "Continuing Education Tracker for licensed Tradespeople",
