@@ -17,6 +17,6 @@ class User(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     license_holders = relationship("LicenseHolder", back_populates="user")
-    subscription = relationship("Subscription", back_populates="user")
+    subscriptions= relationship("Subscription", back_populates="user")
 
     

@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     stripe_secret_key: str
     stripe_webhook_secret: str
     resend_api_key: str
+    from_email: str
     twilio_account_sid: str
     twilio_auth_token: str
     twilio_phone_number: str
