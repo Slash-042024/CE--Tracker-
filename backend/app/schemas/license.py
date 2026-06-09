@@ -5,6 +5,8 @@ from datetime import datetime, date
 
 class LicenseCreate(BaseModel):
     license_number : str
+    license_holder_id : int
+    license_type : str
     expiration_date : date
     state : str
     ce_hours_required : int
