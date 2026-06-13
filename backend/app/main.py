@@ -5,6 +5,8 @@ from app.routers.auth import router as auth_router
 from app.routers.users import router as users_router
 from app.routers.license_holders import router as license_holders_router
 from app.routers.licenses import router as licenses_router
+from app.routers.ce_courses import router as ce_courses_router
+from app.routers.dashboard import router as dashboard_router
 
 
 app = FastAPI(
@@ -25,6 +27,9 @@ app.include_router(auth_router)
 app.include_router(users_router)
 app.include_router(license_holders_router)
 app.include_router(licenses_router)
+app.include_router(ce_courses_router)
+app.include_router(dashboard_router)
+
 
 @app.get("/")
 def root():
