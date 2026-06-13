@@ -26,13 +26,14 @@ def create_one(data: LicenseCreate, current_user: User = Depends(get_current_act
     if not lh:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="License holder not found")
     lic = License(
-         license_holder_id=data.license_holder_id,
-         license_number=data.license_number,
-         license_type=data.license_type,
-         issuing_authority=data.issuing_authority,
-         expiration_date=data.expiration_date,
-         ce_hours_required=data.ce_hours_required,
-  )
+        license_holder_id=data.license_holder_id,
+        license_number=data.license_number,
+        license_type=data.license_type,
+        issuing_authority=data.issuing_authority,
+        expiration_date=data.expiration_date,
+        ce_hours_required=data.ce_hours_required,
+        state=data.state or "TX",
+    )
     db.add(lic)
     db.commit()
     db.refresh(lic)

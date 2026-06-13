@@ -8,8 +8,9 @@ class LicenseCreate(BaseModel):
     license_holder_id : int
     license_type : str
     expiration_date : date
-    state : str
+    state : Optional[str] = "TX"
     ce_hours_required : int
+    issuing_authority: Optional[str] = None
     
     
 class LicenseResponse(BaseModel):

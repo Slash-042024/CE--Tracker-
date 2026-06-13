@@ -3,11 +3,11 @@ from typing import Optional
 from datetime import datetime, date
 
 class CECourseCreate(BaseModel):
-    course_name : str
-    hours_earned : int
-    date_completed : date
-    course_provider : str
-    
+    license_id: int
+    course_name: str
+    hours_earned: int
+    date_completed: date
+    course_provider: str
     
 class CECourseResponse(BaseModel):
     id : int

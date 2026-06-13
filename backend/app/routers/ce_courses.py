@@ -20,13 +20,12 @@ def create_ce_course(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="License not found")
     lic_course = CECourse(
         license_id=ce_course_in.license_id,
-        license_holder_id=ce_course_in.license_holder_id,
         course_name=ce_course_in.course_name,
-        provider=ce_course_in.provider,
-        completion_date=ce_course_in.completion_date,
-        ce_hours=ce_course_in.ce_hours
+        course_provider=ce_course_in.course_provider,
+        date_completed=ce_course_in.date_completed,
+        hours_earned=ce_course_in.hours_earned,
     )
-    lic.ce_hours_completed += ce_course_in.ce_hours
+    lic.ce_hours_completed += ce_course_in.hours_earned
     db.add(lic_course)
     db.commit()
     db.refresh(lic_course)

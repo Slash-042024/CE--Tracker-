@@ -12,6 +12,7 @@ class CECourse(Base):
     date_completed = Column(Date, nullable=False)
     hours_earned = Column(Integer, nullable=False)
     certificate_url = Column(String, nullable=True)
+    is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     license = relationship("License", back_populates="ce_courses")
