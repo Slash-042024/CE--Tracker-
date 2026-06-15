@@ -7,7 +7,7 @@ from app.routers.license_holders import router as license_holders_router
 from app.routers.licenses import router as licenses_router
 from app.routers.ce_courses import router as ce_courses_router
 from app.routers.dashboard import router as dashboard_router
-
+from app.routers.documents import router as document_router
 
 app = FastAPI(
     title = "CE Tracker API",
@@ -29,7 +29,7 @@ app.include_router(license_holders_router)
 app.include_router(licenses_router)
 app.include_router(ce_courses_router)
 app.include_router(dashboard_router)
-
+app.include_router(document_router)
 
 @app.get("/")
 def root():
